@@ -60,7 +60,7 @@ private extension OneLoyaltyDataFlutterPlugin {
                 name: "",
                 version: ""
             ),
-            device: .init(
+            LoyaltyDevice: .init(
                 id: UIDevice.current.identifierForVendor!.uuidString,
                 name: UIDevice.current.name,
                 model: UIDevice.current.model,
