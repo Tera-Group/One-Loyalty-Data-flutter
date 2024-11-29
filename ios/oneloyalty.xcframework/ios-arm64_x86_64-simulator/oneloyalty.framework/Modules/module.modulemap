@@ -1,6 +1,0 @@
-framework module oneloyalty {
-    umbrella header "oneloyalty.h"
-
-    export *
-    module * { export * }
-}

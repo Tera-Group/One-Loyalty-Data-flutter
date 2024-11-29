@@ -8,7 +8,8 @@ abstract class OneLoyaltyDataFlutterPlatform extends PlatformInterface {
 
   static final Object _token = Object();
 
-  static OneLoyaltyDataFlutterPlatform _instance = MethodChannelOneLoyaltyDataFlutter();
+  static OneLoyaltyDataFlutterPlatform _instance =
+      MethodChannelOneLoyaltyDataFlutter();
 
   /// The default instance of [OneLoyaltyDataFlutterPlatform] to use.
   ///
@@ -23,7 +24,15 @@ abstract class OneLoyaltyDataFlutterPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<String?> getPlatformVersion() {
-    throw UnimplementedError('platformVersion() has not been implemented.');
+  Future<bool> setupSDK(Map<String, dynamic> configMap) {
+    throw UnimplementedError('setupSDK() has not been implemented.');
+  }
+
+  Future<String?> getListMission() {
+    throw UnimplementedError('getListMission() has not been implemented.');
+  }
+
+  Future<String?> getUser() {
+    throw UnimplementedError('getUser() has not been implemented.');
   }
 }
