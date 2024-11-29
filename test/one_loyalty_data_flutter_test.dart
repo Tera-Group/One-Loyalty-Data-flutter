@@ -16,6 +16,9 @@ class MockOneLoyaltyDataFlutterPlatform
 
   @override
   Future<String?> getUser() => Future.value("");
+
+  @override
+  Future<bool> trackingEvent(Map<String, dynamic> configMap) => Future.value(true);
 }
 
 void main() {
