@@ -9,8 +9,8 @@ rm -rf $XCFRAMEWORK_DIR
 mkdir $XCFRAMEWORK_DIR
 
 # load xcframework from tag/branch
-# git clone -b $TAG_VERSION --single-branch $REPO $XCFRAMEWORK_DIR
-git clone -b develop --single-branch $REPO $XCFRAMEWORK_DIR
+git clone -b $TAG_VERSION --single-branch $REPO $XCFRAMEWORK_DIR
+#git clone -b develop --single-branch $REPO $XCFRAMEWORK_DIR
 
 # delete xcframework 
 rm -rf ios/$ONE_LOYALTY_FRAMEWORK

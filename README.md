@@ -48,7 +48,7 @@ publishTokenGitHub=####
 ```
 dependencies {
     ...
-    implementation "io.teragroup:oneloyalty-android:0.1.0-20241129.085010-8"
+    implementation "io.teragroup:oneloyalty-android:0.1.0"
 }
 ```
 
@@ -161,7 +161,7 @@ OneLoyalty.shared.setToken(token: "access token")
 ### android
 
 ```kotlin
-OneLoyalty.setToken(token: "access token")
+OneLoyalty.setToken(token = "access token")
 ```
 
 ---

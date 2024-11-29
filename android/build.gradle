@@ -111,5 +111,5 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     //oneloyalty dependencies
-    implementation "io.teragroup:oneloyalty-android:0.1.0-20241129.085010-8"
+    implementation "io.teragroup:oneloyalty-android:0.1.0"
 }
