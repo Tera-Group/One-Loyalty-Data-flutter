@@ -27,8 +27,18 @@ Future<void> _setupSDK() async {
       "apiClientIdKey": "X-Client-Id",
     };
 
-  final result = await _oneLoyaltyDataFlutterPlugin.setupSDK(map);
+    final result = await _oneLoyaltyDataFlutterPlugin.setupSDK(map);
     print("_setupSDK: ${result}"); // Output: SDK Setup Called
+
+    Map<String, dynamic> trackingProperties = {
+      "success": true
+    };
+    final trackingResult = await _oneLoyaltyDataFlutterPlugin.trackingEvent({
+      "eventName": "setupSDK",
+      "forceCleanQueue": false,
+      "properties": trackingProperties
+    });
+    print("_setupSDK send tracking event: ${trackingResult}");
   } on PlatformException catch (e) {
     print("flutter _setupSDK. to setup SDK: '${e.message}");
   }

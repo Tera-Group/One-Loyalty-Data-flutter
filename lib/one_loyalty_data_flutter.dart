@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'one_loyalty_data_flutter_platform_interface.dart';
 
 class OneLoyaltyDataFlutter {
@@ -12,5 +14,9 @@ class OneLoyaltyDataFlutter {
 
   Future<String?> getUser() {
     return OneLoyaltyDataFlutterPlatform.instance.getUser();
+  }
+
+  Future<bool> trackingEvent(Map<String, dynamic> configMap) {
+    return OneLoyaltyDataFlutterPlatform.instance.trackingEvent(configMap);
   }
 }

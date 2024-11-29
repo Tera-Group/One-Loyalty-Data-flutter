@@ -25,4 +25,11 @@ class MethodChannelOneLoyaltyDataFlutter extends OneLoyaltyDataFlutterPlatform {
   Future<String?> getUser() async {
     return await methodChannel.invokeMethod<String?>('getUser');
   }
+
+  @override
+  Future<bool> trackingEvent(Map<String, dynamic> configMap) async {
+    final result =
+    await methodChannel.invokeMethod<bool>('trackingEvent', configMap);
+    return result ?? false;
+  }
 }

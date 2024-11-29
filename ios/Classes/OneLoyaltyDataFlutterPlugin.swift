@@ -17,6 +17,8 @@ public class OneLoyaltyDataFlutterPlugin: NSObject, FlutterPlugin {
          getListMission(call, result)
     case "getUser":
          getUser(call, result)
+     case "trackingEvent":
+         trackingEvent(call, result)
     default:
       result(FlutterMethodNotImplemented)
     }
@@ -56,11 +58,7 @@ private extension OneLoyaltyDataFlutterPlugin {
                 name: appName,
                 version: versionNumber
             ),
-            sdk: .init(
-                name: "",
-                version: ""
-            ),
-            LoyaltyDevice: .init(
+            device: .init(
                 id: UIDevice.current.identifierForVendor!.uuidString,
                 name: UIDevice.current.name,
                 model: UIDevice.current.model,
@@ -71,7 +69,8 @@ private extension OneLoyaltyDataFlutterPlugin {
                 type: .phone,
                 width: "\(UIScreen.main.bounds.width)",
                 height: "\(UIScreen.main.bounds.height)"
-            )
+            ),
+            sdk: nil
         )
 
         OneLoyalty.shared.setup(
@@ -112,6 +111,20 @@ private extension OneLoyaltyDataFlutterPlugin {
                 result(FlutterError(code: "get user error", message: "user not found", details: nil))
             }
         }
+    }
+
+    func trackingEvent(_ call: FlutterMethodCall, _ result: @escaping FlutterResult) {
+        guard
+            let arguments = call.arguments as? [String: Any],
+            let eventName = arguments["eventName"] as? String,
+            let properties = arguments["properties"] as? [String: Any]
+        else {
+            result(FlutterError(code: "Tracking event error", message: "invalid input", details: nil))
+                return
+        }
+        let forceCleanQueue = (arguments["forceCleanQueue"] as? Bool) ?? false
+        OnTracking.shared.trackEvent(name: eventName, properties: properties, forceCleanQueue: forceCleanQueue)
+        result(true)
     }
  }
 

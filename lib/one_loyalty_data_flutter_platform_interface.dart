@@ -35,4 +35,8 @@ abstract class OneLoyaltyDataFlutterPlatform extends PlatformInterface {
   Future<String?> getUser() {
     throw UnimplementedError('getUser() has not been implemented.');
   }
+
+  Future<bool> trackingEvent(Map<String, dynamic> configMap) {
+    throw UnimplementedError('trackingEvent() has not been implemented.');
+  }
 }
