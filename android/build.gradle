@@ -1,0 +1,115 @@
+group = "io.teragroup.one_loyalty_data_flutter"
+version = "1.0-SNAPSHOT"
+
+//region Read credential properties from file, client app can input directly
+def findFile(File folder, String fileName, int retryCount) {
+    def file = new File(folder, fileName)
+    if (file.exists()) {
+        return file
+    }
+    if (retryCount < 2) {
+        return findFile(folder.parentFile, fileName, retryCount + 1)
+    }
+    return null
+}
+
+def loadProperties(String fileName) {
+    def defProperties = new Properties()
+    def defPropertiesFile = findFile(project.rootDir, fileName, 0)
+    if (defPropertiesFile.exists()) {
+        defPropertiesFile.withReader('UTF-8') { reader ->
+            defProperties.load(reader)
+        }
+    }
+    return defProperties
+}
+
+def credentialProps = loadProperties("credentials.properties")
+
+buildscript {
+    ext.kotlin_version = "1.8.22"
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("com.android.tools.build:gradle:8.1.0")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        mavenCentral()
+
+        maven {
+            url "https://maven.pkg.github.com/Tera-Group/One-Loyalty-Data-Android"
+            credentials {
+                username = credentialProps["publishActor"]
+                password = credentialProps["publishTokenGitHub"]
+            }
+        }
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+apply plugin: "com.android.library"
+apply plugin: "kotlin-android"
+
+android {
+    if (project.android.hasProperty("namespace")) {
+        namespace = "io.teragroup.one_loyalty_data_flutter"
+    }
+
+    compileSdk = 34
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        main.java.srcDirs += "src/main/kotlin"
+        test.java.srcDirs += "src/test/kotlin"
+    }
+
+    defaultConfig {
+        minSdk = 23
+    }
+
+    dependencies {
+        testImplementation("org.jetbrains.kotlin:kotlin-test")
+        testImplementation("org.mockito:mockito-core:5.0.0")
+    }
+
+    testOptions {
+        unitTests.all {
+            useJUnitPlatform()
+
+            testLogging {
+               events "passed", "skipped", "failed", "standardOut", "standardError"
+               outputs.upToDateWhen {false}
+               showStandardStreams = true
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //oneloyalty dependencies
+    implementation "io.teragroup:oneloyalty-android:0.1.0"
+}
