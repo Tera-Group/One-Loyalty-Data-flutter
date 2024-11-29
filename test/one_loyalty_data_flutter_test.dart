@@ -9,21 +9,20 @@ class MockOneLoyaltyDataFlutterPlatform
     implements OneLoyaltyDataFlutterPlatform {
 
   @override
-  Future<String?> getPlatformVersion() => Future.value('42');
+  Future<bool> setupSDK(Map<String, dynamic> configMap) => Future.value(true);
+
+  @override
+  Future<String?> getListMission() => Future.value("");
+
+  @override
+  Future<String?> getUser() => Future.value("");
 }
 
 void main() {
-  final OneLoyaltyDataFlutterPlatform initialPlatform = OneLoyaltyDataFlutterPlatform.instance;
+  final OneLoyaltyDataFlutterPlatform initialPlatform =
+      OneLoyaltyDataFlutterPlatform.instance;
 
   test('$MethodChannelOneLoyaltyDataFlutter is the default instance', () {
     expect(initialPlatform, isInstanceOf<MethodChannelOneLoyaltyDataFlutter>());
-  });
-
-  test('getPlatformVersion', () async {
-    OneLoyaltyDataFlutter oneLoyaltyDataFlutterPlugin = OneLoyaltyDataFlutter();
-    MockOneLoyaltyDataFlutterPlatform fakePlatform = MockOneLoyaltyDataFlutterPlatform();
-    OneLoyaltyDataFlutterPlatform.instance = fakePlatform;
-
-    expect(await oneLoyaltyDataFlutterPlugin.getPlatformVersion(), '42');
   });
 }

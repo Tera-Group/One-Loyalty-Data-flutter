@@ -8,7 +8,7 @@ ONE_LOYALTY_FRAMEWORK='oneloyalty.xcframework'
 rm -rf $XCFRAMEWORK_DIR
 mkdir $XCFRAMEWORK_DIR
 
-# load xcframework from tag
+# load xcframework from tag/branch
 # git clone -b $TAG_VERSION --single-branch $REPO $XCFRAMEWORK_DIR
 git clone -b develop --single-branch $REPO $XCFRAMEWORK_DIR
 

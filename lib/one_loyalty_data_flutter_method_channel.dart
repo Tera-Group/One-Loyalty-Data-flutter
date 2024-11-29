@@ -10,8 +10,19 @@ class MethodChannelOneLoyaltyDataFlutter extends OneLoyaltyDataFlutterPlatform {
   final methodChannel = const MethodChannel('one_loyalty_data_flutter');
 
   @override
-  Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
-    return version;
+  Future<bool> setupSDK(Map<String, dynamic> configMap) async {
+    final result =
+        await methodChannel.invokeMethod<bool>('setupSDK', configMap);
+    return result ?? false;
+  }
+
+  @override
+  Future<String?> getListMission() async {
+    return await methodChannel.invokeMethod<String?>('getListMission');
+  }
+
+  @override
+  Future<String?> getUser() async {
+    return await methodChannel.invokeMethod<String?>('getUser');
   }
 }
