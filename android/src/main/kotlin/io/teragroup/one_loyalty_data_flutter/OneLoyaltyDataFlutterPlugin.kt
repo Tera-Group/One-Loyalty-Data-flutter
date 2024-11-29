@@ -1,5 +1,6 @@
 package io.teragroup.one_loyalty_data_flutter
 
+import OnTracking
 import android.content.Context
 import android.content.pm.PackageManager.NameNotFoundException
 import android.os.Build
@@ -46,6 +47,7 @@ class OneLoyaltyDataFlutterPlugin : FlutterPlugin, MethodCallHandler {
                     "setupSDK" -> onSetup(call, result)
                     "getListMission" -> getListMission(call, result)
                     "getUser" -> getUser(call, result)
+                    "trackingEvent" -> trackingEvent(call, result)
                     else -> result.notImplemented()
                 }
             } catch (e: Exception) {
@@ -102,15 +104,23 @@ class OneLoyaltyDataFlutterPlugin : FlutterPlugin, MethodCallHandler {
         }
     }
 
+    private suspend fun trackingEvent(call: MethodCall, result: Result) {
+        try {
+            val arguments = call.arguments as Map<String, Any>
+            val eventName = arguments["eventName"] as? String
+            val properties = arguments["properties"] as? Map<String, Any>
+            OnTracking.trackEvent(eventName.orEmpty(), properties)
+            result.success(true)
+        } catch (error: Exception) {
+            result.error("Tracking event error", error.message, null)
+        }
+    }
+
     private fun buildAppContext(context: Context, deviceId: String): AppContext {
         val deviceName = "${Build.BRAND} ${Build.MODEL}".trim()
         val displayMetrics = context.resources.displayMetrics
         return AppContext(
             appInformation = context.getAppInfo(),
-            sdk = Sdk(
-                name = "on-tracking-android",
-                version = ""
-            ),
             device = LoyaltyDevice(
                 id = deviceId,
                 name = deviceName,
