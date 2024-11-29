@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
@@ -79,27 +80,30 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           children: <Widget>[
-            Row(
-              children: [
-                const ElevatedButton(
-                  onPressed: _setupSDK,
-                  child: Text('Setup'),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(left: 8.0),
-                  child: ElevatedButton(
-                    onPressed: missionCubit.fetchMissions,
-                    child: const Text('Fetch Missions'),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  const ElevatedButton(
+                    onPressed: _setupSDK,
+                    child: Text('Setup'),
                   ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(left: 8.0),
-                  child: ElevatedButton(
-                    onPressed: userLoyaltyCubit.fetchUserLoyalty,
-                    child: const Text('Fetch User'),
+                  Container(
+                    margin: const EdgeInsets.only(left: 8.0),
+                    child: ElevatedButton(
+                      onPressed: missionCubit.fetchMissions,
+                      child: const Text('Fetch Missions'),
+                    ),
                   ),
-                )
-              ],
+                  Container(
+                    margin: const EdgeInsets.only(left: 8.0),
+                    child: ElevatedButton(
+                      onPressed: userLoyaltyCubit.fetchUserLoyalty,
+                      child: const Text('Fetch User'),
+                    ),
+                  )
+                ],
+              ),
             ),
             BlocBuilder<UserLoyaltyCubit, UserLoyaltyState>(
               builder: (context, state) {
