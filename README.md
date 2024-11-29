@@ -4,9 +4,9 @@ A Sample flutter plugin to use LoyaltySDK
 
 ---
 
-# API Swagger
+# Sdk Document
 
-TBD
+[here](https://tera-group.github.io/One-Loyalty-Data-flutter/index.html)
 
 ---
 
@@ -29,15 +29,30 @@ samples, guidance on mobile development, and a full API reference.
 2. Contact DevOps to get credentials information below
 
 ```
-repoName=xxxx
-publishActor=xxxx
-publishTokenGitHub=xxxx
-gitlabProjectId=xxxx
-publishTokenName=xxxx
-publishToken=xxxx
+publishActor=####
+publishTokenGitHub=####
 ```
 
-##Setup for iOS dependencies
+**Note:** if use directly android sdk without plugin you need import android sdk on gradle
+
+```
+ maven {
+    url "https://maven.pkg.github.com/Tera-Group/One-Loyalty-Data-Android"
+    credentials {
+        username = credentialProps["publishActor"]
+        password = credentialProps["publishTokenGitHub"]
+    }
+}
+```
+
+```
+dependencies {
+    ...
+    implementation "io.teragroup:oneloyalty-android:0.1.0-20241129.085010-8"
+}
+```
+
+## Setup for iOS dependencies
 
 1. Run `./scripts/get_ios_framework.sh`
 2. Edit `load xcframework from tag/branch` - script to fetch expected version
@@ -93,8 +108,42 @@ OneLoyalty.shared.setup(
 
 ### Android
 
-```
-...
+```kotlin
+val config = Config(
+    apiKey = "Your api key",
+    clientId = "Your client id",
+    apiClientIdKey = "Your app client key",
+    defaultConfig = nil,
+    requestTimeout = 10_000
+)
+
+val appContext = AppContext(
+    app = AppInformation(
+        build = "App build number",
+        bundleId = "app bundle",
+        name = "App Name",
+        version = "App version"
+    ),
+    device = LoyaltyDevice(
+        id = "a UUID that may be used to uniquely identify the device",
+        name = "device name",
+        model = "device model",
+        timezone = "device time zone",
+        language = "device language",
+        os = "OS name",
+        osVersion = "OS version",
+        type = "device type",
+        width = "device screen width",
+        height = "device screen width"
+    ),
+    sdk = null // LoyaltySDK version info - optional
+)
+
+OneLoyalty.setup(
+    context =  "Context of app",
+    config = config,
+    appContext = appContext
+)
 ```
 
 ---
@@ -111,11 +160,13 @@ OneLoyalty.shared.setToken(token: "access token")
 
 ### android
 
-`...`
+```kotlin
+OneLoyalty.setToken(token: "access token")
+```
 
 ---
 
-# Functions
+# Loyalty Functions
 
 ## Get user loyalty
 
@@ -127,13 +178,15 @@ OneLoyalty.shared.loyaltyService.getUser { user, error in }
 
 ### android
 
-```adnroid
-...
+```kotlin
+val user = OneLoyalty.loyaltyService.getUser()
 ```
+
+## [Other function](https://tera-group.github.io/One-Loyalty-Data-flutter/oneloyalty/com.teragroup.io.onappdata.services/-loyalty-service/index.html) (Use same above)
 
 ---
 
-# Tracking Event
+# [Tracking Event](https://tera-group.github.io/One-Loyalty-Data-flutter/oneloyalty/[root]/-on-tracking/index.html)
 
 ### iOS
 
@@ -158,8 +211,21 @@ OnTracking.shared.trackView(
 
 ### android
 
+```kotlin
+OnTracking.trackEvent(
+    name = "tracking name", // event name
+    properties = mapOf("key" to "value"), // event name // optional
+    forceCleanQueue = true // to send event immediately
+)
 ```
-...
+
+2. Tracking view
+
+```kotlin
+OnTracking.trackView(
+    name = "tracking name", // view/screen name
+    properties = mapOf("key" to "value"), // optional
+)
 ```
 
 ---

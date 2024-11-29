@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>LoyaltyService</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+                    <a class="library-name--link" href="../../../index.html">
+                            oneloyalty
+                    </a>
+            </div>
+            <div class="library-version">
+0.1.0-SNAPSHOT            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":oneloyalty:dokkaHtml/commonMain">Common</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="oneloyalty::com.teragroup.io.onappdata.services/LoyaltyService///PointingToDeclaration//-1246002190">
+  <div class="breadcrumbs"><a href="../../../index.html">oneloyalty</a><span class="delimiter">/</span><a href="../index.html">com.teragroup.io.onappdata.services</a><span class="delimiter">/</span><span class="current">LoyaltyService</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Loyalty</span><wbr></wbr><span><span>Service</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":oneloyalty:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">LoyaltyService</a></div><p class="paragraph">Interface that defines the operations for managing loyalty-related actions such as user setup, mission management, and reward claiming. This service provides methods to interact with loyalty programs, including user data, points, check-ins, missions, and more.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="1550957693%2FFunctions%2F-1246002190" anchor-label="adBased" id="1550957693%2FFunctions%2F-1246002190" data-filterable-set=":oneloyalty:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":oneloyalty:dokkaHtml/commonMain" data-filterable-set=":oneloyalty:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="ad-based.html"><span>ad</span><wbr></wbr><span><span>Based</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1550957693%2FFunctions%2F-1246002190"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":oneloyalty:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="ad-based.html"><span class="token function">adBased</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">transaction<span class="token operator">: </span><a href="../../com.teragroup.io.onappdata.model.loyalty/-burn-transaction-request/index.html">BurnTransactionRequest</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.teragroup.io.onappdata.model.loyalty/-loyalty-history/index.html">LoyaltyHistory</a></div><div class="brief "><p class="paragraph">Performs an ad-based transaction to burn loyalty points.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1836627170%2FFunctions%2F-1246002190" anchor-label="applyReferralCode" id="1836627170%2FFunctions%2F-1246002190" data-filterable-set=":oneloyalty:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":oneloyalty:dokkaHtml/commonMain" data-filterable-set=":oneloyalty:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="apply-referral-code.html"><span>apply</span><wbr></wbr><span>Referral</span><wbr></wbr><span><span>Code</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1836627170%2FFunctions%2F-1246002190"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":oneloyalty:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="apply-referral-code.html"><span class="token function">applyReferralCode</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">referralCode<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Applies a referral code to the user's account.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="599131990%2FFunctions%2F-1246002190" anchor-label="burn" id="599131990%2FFunctions%2F-1246002190" data-filterable-set=":oneloyalty:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":oneloyalty:dokkaHtml/commonMain" data-filterable-set=":oneloyalty:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="burn.html"><span><span>burn</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="599131990%2FFunctions%2F-1246002190"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":oneloyalty:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="burn.html"><span class="token function">burn</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">transaction<span class="token operator">: </span><a href="../../com.teragroup.io.onappdata.model.loyalty/-burn-transaction-request/index.html">BurnTransactionRequest</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Burns loyalty points in a transaction.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1900547095%2FFunctions%2F-1246002190" anchor-label="checkIfUserAppliedReferralCode" id="-1900547095%2FFunctions%2F-1246002190" data-filterable-set=":oneloyalty:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":oneloyalty:dokkaHtml/commonMain" data-filterable-set=":oneloyalty:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="check-if-user-applied-referral-code.html"><span>check</span><wbr></wbr><span>If</span><wbr></wbr><span>User</span><wbr></wbr><span>Applied</span><wbr></wbr><span>Referral</span><wbr></wbr><span><span>Code</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1900547095%2FFunctions%2F-1246002190"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":oneloyalty:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="check-if-user-applied-referral-code.html"><span class="token function">checkIfUserAppliedReferralCode</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Checks if the user has already applied a referral code.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1844979129%2FFunctions%2F-1246002190" anchor-label="claimCheckInPoint" id="1844979129%2FFunctions%2F-1246002190" data-filterable-set=":oneloyalty:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":oneloyalty:dokkaHtml/commonMain" data-filterable-set=":oneloyalty:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="claim-check-in-point.html"><span>claim</span><wbr></wbr><span>Check</span><wbr></wbr><span>In</span><wbr></wbr><span><span>Point</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1844979129%2FFunctions%2F-1246002190"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":oneloyalty:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="claim-check-in-point.html"><span class="token function">claimCheckInPoint</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">claimRequest<span class="token operator">: </span><a href="../../com.teragroup.io.onappdata.model.loyalty/-claim-request/index.html">ClaimRequest</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Claims a check-in point for the user.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1532804374%2FFunctions%2F-1246002190" anchor-label="claimMissionPoint" id="-1532804374%2FFunctions%2F-1246002190" data-filterable-set=":oneloyalty:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":oneloyalty:dokkaHtml/commonMain" data-filterable-set=":oneloyalty:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="claim-mission-point.html"><span>claim</span><wbr></wbr><span>Mission</span><wbr></wbr><span><span>Point</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1532804374%2FFunctions%2F-1246002190"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":oneloyalty:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="claim-mission-point.html"><span class="token function">claimMissionPoint</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">missionId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Claims points for a completed mission.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-982021182%2FFunctions%2F-1246002190" anchor-label="getConfiguration" id="-982021182%2FFunctions%2F-1246002190" data-filterable-set=":oneloyalty:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":oneloyalty:dokkaHtml/commonMain" data-filterable-set=":oneloyalty:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-configuration.html"><span>get</span><wbr></wbr><span><span>Configuration</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-982021182%2FFunctions%2F-1246002190"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":oneloyalty:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="get-configuration.html"><span class="token function">getConfiguration</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">key<span class="token operator">: </span><a href="../../com.teragroup.io.onappdata.model.loyalty.constant/-loyalty-configuration-key/index.html">LoyaltyConfigurationKey</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.teragroup.io.onappdata.model.loyalty/-loyalty-configuration/index.html">LoyaltyConfiguration</a></div><div class="brief "><p class="paragraph">Retrieves the loyalty configuration for a specific key.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1417902014%2FFunctions%2F-1246002190" anchor-label="getIapBenefits" id="-1417902014%2FFunctions%2F-1246002190" data-filterable-set=":oneloyalty:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":oneloyalty:dokkaHtml/commonMain" data-filterable-set=":oneloyalty:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-iap-benefits.html"><span>get</span><wbr></wbr><span>Iap</span><wbr></wbr><span><span>Benefits</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1417902014%2FFunctions%2F-1246002190"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":oneloyalty:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="get-iap-benefits.html"><span class="token function">getIapBenefits</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.teragroup.io.onappdata.model.inapppurchase/-user-in-app-product-benefit/index.html">UserInAppProductBenefit</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Retrieves a list of in-app product benefits for the user.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="823395907%2FFunctions%2F-1246002190" anchor-label="getListCheckInPoint" id="823395907%2FFunctions%2F-1246002190" data-filterable-set=":oneloyalty:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":oneloyalty:dokkaHtml/commonMain" data-filterable-set=":oneloyalty:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-list-check-in-point.html"><span>get</span><wbr></wbr><span>List</span><wbr></wbr><span>Check</span><wbr></wbr><span>In</span><wbr></wbr><span><span>Point</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="823395907%2FFunctions%2F-1246002190"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":oneloyalty:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="get-list-check-in-point.html"><span class="token function">getListCheckInPoint</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.teragroup.io.onappdata.model.loyalty/-check-in-claim-rule/index.html">CheckInClaimRule</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Fetches a list of available check-in points that can be claimed.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2070198312%2FFunctions%2F-1246002190" anchor-label="getListLoyaltyHistory" id="-2070198312%2FFunctions%2F-1246002190" data-filterable-set=":oneloyalty:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":oneloyalty:dokkaHtml/commonMain" data-filterable-set=":oneloyalty:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-list-loyalty-history.html"><span>get</span><wbr></wbr><span>List</span><wbr></wbr><span>Loyalty</span><wbr></wbr><span><span>History</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2070198312%2FFunctions%2F-1246002190"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":oneloyalty:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="get-list-loyalty-history.html"><span class="token function">getListLoyaltyHistory</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">pageSize<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">10</span><span class="token punctuation">, </span></span><span class="parameter ">action<span class="token operator">: </span><a href="../../com.teragroup.io.onappdata.model.loyalty.constant/-loyalty-action/index.html">LoyaltyAction</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">sources<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.teragroup.io.onappdata.model.loyalty.constant/-loyalty-source/index.html">LoyaltySource</a><span class="token operator">&gt;</span><span class="token operator"> = </span>emptyList()<span class="token punctuation">, </span></span><span class="parameter ">pageContext<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.teragroup.io.onappdata.response/-paging-response/index.html">PagingResponse</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.teragroup.io.onappdata.model.loyalty/-loyalty-history/index.html">LoyaltyHistory</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Fetches a paginated list of the user's loyalty history.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1478252456%2FFunctions%2F-1246002190" anchor-label="getListMission" id="1478252456%2FFunctions%2F-1246002190" data-filterable-set=":oneloyalty:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":oneloyalty:dokkaHtml/commonMain" data-filterable-set=":oneloyalty:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-list-mission.html"><span>get</span><wbr></wbr><span>List</span><wbr></wbr><span><span>Mission</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1478252456%2FFunctions%2F-1246002190"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":oneloyalty:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="get-list-mission.html"><span class="token function">getListMission</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.teragroup.io.onappdata.model.loyalty/-mission/index.html">Mission</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Retrieves a list of missions available for the user.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="929131668%2FFunctions%2F-1246002190" anchor-label="getListMissionByType" id="929131668%2FFunctions%2F-1246002190" data-filterable-set=":oneloyalty:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":oneloyalty:dokkaHtml/commonMain" data-filterable-set=":oneloyalty:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-list-mission-by-type.html"><span>get</span><wbr></wbr><span>List</span><wbr></wbr><span>Mission</span><wbr></wbr><span>By</span><wbr></wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="929131668%2FFunctions%2F-1246002190"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":oneloyalty:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="get-list-mission-by-type.html"><span class="token function">getListMissionByType</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">type<span class="token operator">: </span><a href="../../com.teragroup.io.onappdata.model.loyalty.constant/-mission-type/index.html">MissionType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.teragroup.io.onappdata.model.loyalty/-mission/index.html">Mission</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Retrieves a list of missions filtered by type.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1400874555%2FFunctions%2F-1246002190" anchor-label="getMiniApps" id="-1400874555%2FFunctions%2F-1246002190" data-filterable-set=":oneloyalty:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":oneloyalty:dokkaHtml/commonMain" data-filterable-set=":oneloyalty:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-mini-apps.html"><span>get</span><wbr></wbr><span>Mini</span><wbr></wbr><span><span>Apps</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1400874555%2FFunctions%2F-1246002190"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":oneloyalty:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="get-mini-apps.html"><span class="token function">getMiniApps</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">pageSize<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">10</span><span class="token punctuation">, </span></span><span class="parameter ">pageContext<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.teragroup.io.onappdata.response/-paging-response/index.html">PagingResponse</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.teragroup.io.onappdata.model/-mini-app/index.html">MiniApp</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Fetches a paginated list of mini-apps available for the user.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-474078278%2FFunctions%2F-1246002190" anchor-label="getReferralCode" id="-474078278%2FFunctions%2F-1246002190" data-filterable-set=":oneloyalty:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":oneloyalty:dokkaHtml/commonMain" data-filterable-set=":oneloyalty:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-referral-code.html"><span>get</span><wbr></wbr><span>Referral</span><wbr></wbr><span><span>Code</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-474078278%2FFunctions%2F-1246002190"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":oneloyalty:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="get-referral-code.html"><span class="token function">getReferralCode</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">Retrieves the user's referral code.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-819699913%2FFunctions%2F-1246002190" anchor-label="getReferralList" id="-819699913%2FFunctions%2F-1246002190" data-filterable-set=":oneloyalty:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":oneloyalty:dokkaHtml/commonMain" data-filterable-set=":oneloyalty:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-referral-list.html"><span>get</span><wbr></wbr><span>Referral</span><wbr></wbr><span><span>List</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-819699913%2FFunctions%2F-1246002190"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":oneloyalty:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="get-referral-list.html"><span class="token function">getReferralList</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">pageSize<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">10</span><span class="token punctuation">, </span></span><span class="parameter ">pageContext<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.teragroup.io.onappdata.response/-paging-response/index.html">PagingResponse</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.teragroup.io.onappdata.model.loyalty/-referral-history/index.html">ReferralHistory</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Fetches a paginated list of the user's referral history.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1761321671%2FFunctions%2F-1246002190" anchor-label="getUser" id="-1761321671%2FFunctions%2F-1246002190" data-filterable-set=":oneloyalty:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":oneloyalty:dokkaHtml/commonMain" data-filterable-set=":oneloyalty:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-user.html"><span>get</span><wbr></wbr><span><span>User</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1761321671%2FFunctions%2F-1246002190"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":oneloyalty:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="get-user.html"><span class="token function">getUser</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.teragroup.io.onappdata.model.loyalty/-user-loyalty/index.html">UserLoyalty</a></div><div class="brief "><p class="paragraph">Retrieves the current user’s loyalty information.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="25867709%2FFunctions%2F-1246002190" anchor-label="setup" id="25867709%2FFunctions%2F-1246002190" data-filterable-set=":oneloyalty:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":oneloyalty:dokkaHtml/commonMain" data-filterable-set=":oneloyalty:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="setup.html"><span><span>setup</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="25867709%2FFunctions%2F-1246002190"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":oneloyalty:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="setup.html"><span class="token function">setup</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Initializes the loyalty service setup.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2097833839%2FFunctions%2F-1246002190" anchor-label="updateUser" id="-2097833839%2FFunctions%2F-1246002190" data-filterable-set=":oneloyalty:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":oneloyalty:dokkaHtml/commonMain" data-filterable-set=":oneloyalty:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="update-user.html"><span>update</span><wbr></wbr><span><span>User</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2097833839%2FFunctions%2F-1246002190"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":oneloyalty:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="update-user.html"><span class="token function">updateUser</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">enableNotification<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Updates the user’s loyalty settings, such as enabling or disabling notifications.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-674759128%2FFunctions%2F-1246002190" anchor-label="updateUserMissionProgress" id="-674759128%2FFunctions%2F-1246002190" data-filterable-set=":oneloyalty:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":oneloyalty:dokkaHtml/commonMain" data-filterable-set=":oneloyalty:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="update-user-mission-progress.html"><span>update</span><wbr></wbr><span>User</span><wbr></wbr><span>Mission</span><wbr></wbr><span><span>Progress</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-674759128%2FFunctions%2F-1246002190"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":oneloyalty:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="update-user-mission-progress.html"><span class="token function">updateUserMissionProgress</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">updateRequest<span class="token operator">: </span><a href="../../com.teragroup.io.onappdata.model.loyalty/-update-user-mission-progress-request/index.html">UpdateUserMissionProgressRequest</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Updates the progress of the user’s mission.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2024 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
