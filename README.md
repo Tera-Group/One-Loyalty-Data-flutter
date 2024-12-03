@@ -229,3 +229,10 @@ OnTracking.trackView(
 ```
 
 ---
+
+### Note
+
+- It is necessary to call `setToken` (accessToken) every time acquire token.
+- Call `registerProfile` after login or whenever the profile changes.
+- Call `clearToken` after logout.
+- You can `registerAuthenticatorListener` to `setToken` again.
