@@ -10,6 +10,15 @@ A Sample flutter plugin to use LoyaltySDK
 
 ---
 
+### Note
+
+- It is necessary to call `setToken` (accessToken) every time acquire token.
+- Call `registerProfile` after login or whenever the profile changes.
+- Call `clearToken` after logout.
+- You can `registerAuthenticatorListener` to `setToken` again.
+
+---
+
 # Getting Started
 
 This project is a starting point for a Flutter
@@ -227,12 +236,3 @@ OnTracking.trackView(
     properties = mapOf("key" to "value"), // optional
 )
 ```
-
----
-
-### Note
-
-- It is necessary to call `setToken` (accessToken) every time acquire token.
-- Call `registerProfile` after login or whenever the profile changes.
-- Call `clearToken` after logout.
-- You can `registerAuthenticatorListener` to `setToken` again.
