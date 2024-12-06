@@ -1,6 +1,6 @@
  #!/bin/bash
 REPO='https://github.com/Tera-Group/One-Loyalty-Data-iOS'
-TAG_VERSION='0.1.4'
+TAG_VERSION='0.1.5'
 XCFRAMEWORK_DIR="ios_xcframework"
 ONE_LOYALTY_FRAMEWORK='oneloyalty.xcframework'
 

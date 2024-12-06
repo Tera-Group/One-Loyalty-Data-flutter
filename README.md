@@ -1,14 +1,26 @@
-# one_loyalty_data_flutter
+<h1 align="center">
+    One Loyalty Data Flutter
+</h1>
 
-A Sample flutter plugin to use LoyaltySDK
+<p align="center">A Sample flutter plugin to use LoyaltySDK</p>
 
----
+<p align="center">
+    <a href="https://github.com/Tera-Group/One-Loyalty-Data-Android/packages/2327215">
+        <img src="https://img.shields.io/badge/package-0.1.5-blue?logo=github" alt="Latest github package version." />
+    </a>
+<p align="center">
 
-# Sdk Document
+<h3 align="center">
+  <a href="https://tera-group.github.io/One-Loyalty-Data-flutter/index.html">Document</a>
+</h3>
 
-[here](https://tera-group.github.io/One-Loyalty-Data-flutter/index.html)
+## Contents
 
----
+- [Note](#note)
+- [Getting Started](#getting-started)
+- [Initial SDK](#initial-sdk)
+- [Common Functions](#common-functions)
+- [Loyalty Functions](#loyalty-functions)
 
 ### Note
 
@@ -19,7 +31,7 @@ A Sample flutter plugin to use LoyaltySDK
 
 ---
 
-# Getting Started
+### Getting Started
 
 This project is a starting point for a Flutter
 [plug-in package](https://flutter.dev/to/develop-plugins),
@@ -30,9 +42,7 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
----
-
-# Setup for Android dependencies
+#### Setup for Android dependencies
 
 1. Create a file with name `credentials.properties` in root project folder.
 2. Contact DevOps to get credentials information below
@@ -61,18 +71,20 @@ dependencies {
 }
 ```
 
-## Setup for iOS dependencies
+#### Setup for iOS dependencies
 
 1. Run `./scripts/get_ios_framework.sh`
 2. Edit `load xcframework from tag/branch` - script to fetch expected version
 
 ---
 
-# Initial/Setup SDK
+## Common Functions
+
+### Initial SDK
 
 Before using the SDK, setup it with your application-specific configuration.
 
-### iOS
+#### iOS
 
 ```swift
 let config: Config = .init(
@@ -115,7 +127,7 @@ OneLoyalty.shared.setup(
 ) { result, error in }
 ```
 
-### Android
+#### Android
 
 ```kotlin
 val config = Config(
@@ -155,19 +167,17 @@ OneLoyalty.setup(
 )
 ```
 
----
-
-# Update access token
+### Update access token
 
 After login we need to set access token for SDK
 
-### iOS
+#### iOS
 
 ```swift
 OneLoyalty.shared.setToken(token: "access token")
 ```
 
-### android
+#### android
 
 ```kotlin
 OneLoyalty.setToken(token = "access token")
@@ -175,29 +185,29 @@ OneLoyalty.setToken(token = "access token")
 
 ---
 
-# Loyalty Functions
+## Loyalty Functions
 
-## Get user loyalty
+### Get user loyalty
 
-### ios
+#### ios
 
 ```swift
 OneLoyalty.shared.loyaltyService.getUser { user, error in }
 ```
 
-### android
+#### android
 
 ```kotlin
 val user = OneLoyalty.loyaltyService.getUser()
 ```
 
-## [Other function](https://tera-group.github.io/One-Loyalty-Data-flutter/oneloyalty/com.teragroup.io.onappdata.services/-loyalty-service/index.html) (Use same above)
+### [Other function](https://tera-group.github.io/One-Loyalty-Data-flutter/oneloyalty/com.teragroup.io.onappdata.services/-loyalty-service/index.html) (Use same above)
 
 ---
 
-# [Tracking Event](https://tera-group.github.io/One-Loyalty-Data-flutter/oneloyalty/[root]/-on-tracking/index.html)
+### [Tracking Event](https://tera-group.github.io/One-Loyalty-Data-flutter/oneloyalty/[root]/-on-tracking/index.html)
 
-### iOS
+#### iOS
 
 1. Tracking event
 
@@ -218,7 +228,7 @@ OnTracking.shared.trackView(
 )
 ```
 
-### android
+#### android
 
 ```kotlin
 OnTracking.trackEvent(
